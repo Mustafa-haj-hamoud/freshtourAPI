@@ -1,4 +1,5 @@
 from flask import Flask,render_template,request, jsonify
+from flask_cors import CORS
 from groq import Groq
 
 systemPrompt = """
@@ -43,6 +44,7 @@ you pay extra attention to match the data correctly, especially the number of ad
 """
 
 app = Flask(__name__)
+CORS(app)
 
 client = Groq(
     api_key="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",
