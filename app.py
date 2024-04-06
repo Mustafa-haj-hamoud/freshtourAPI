@@ -54,7 +54,7 @@ Do not say anything if there isn't enough data to fill the template, just add wh
 app = Flask(__name__)
 CORS(app)
 
-""" 
+
 #comment the code below if you dont want to use groq
 from groq import Groq
 client = Groq(
@@ -81,10 +81,10 @@ def makeRequest(userInput):
     model="mixtral-8x7b-32768",
     )
     return (chat_completion.choices[0].message.content)
- """
 
 
-#zuki ai code below, comment out if you want to use something else
+
+""" #zuki ai code below, comment out if you want to use something else
 import openai
 def makeRequest(userInput):
     messagesArr = [
@@ -110,7 +110,8 @@ def makeRequest(userInput):
     
         messages= messagesArr,
     )
-    return(chat_completion.choices[0].message.content)
+    return(chat_completion.choices[0].message.content) 
+    """
 
 
 
