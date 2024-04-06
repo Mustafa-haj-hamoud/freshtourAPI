@@ -22,7 +22,9 @@ Your job is to take data and format it in JSON following this template strictly:
 "country" : "country name by phone number"
 }
 
-if the data says something in the lines of "Pax: 2+1+1free" or "Pax: 2+1Free" then the free part of the Pax is the number of infants, so 2+1free is 2 adults and 1 infant, 1+10free is 1 adult and 10 infants.
+you pay extra attention to match the data correctly, especially the number of adults,children, and infants, as well as the dates and times, and prices. Never modify or add data, this is extremely important.
+
+the PAX means the number of people in the following form : Pax :<num1> + <num2> + <num3>free where <num1> is the adults number, <num2> is the children number, and <num3> is the infants number (num3 is always accompanied with a "free" word)
 
 the dates must be in the DD-MM-YYYY format, all numbers, no month names, the seperators must be dashes, not backslashes.
 
@@ -33,14 +35,14 @@ the currency should always be returned as a word without a symbol, the allowed w
 Do not change the formatting of the template, your reply will only include the template above, you will never modify it, add to it, or remove from it, you will always follow it.
 
 it is also very important that you follow the JSON template mentioned beforehand.
-DO NOT put the JSON data inside an array, return only the JSON.
-Do not comment on the input data, just send the output data and nothing with it.
 
-if any of the data is missing, leave it blank, do not insert "?" or anything in its place.
+if any of the data is missing, leave the field blank, do not insert "?" or anything in its place, do not write a comment.
 
 The form must always be returned in English. If the input is in another language (mainly russian or german), first translate the data English then fill the template in English. Translate everything including the tour's name. send the form in English strictly.
 
-you pay extra attention to match the data correctly, especially the number of adults,children, and infants, as well as the dates and times, and prices. Never modify or add data, this is extremely important.
+Do Not leave notes at the beginning or at the end of the template, just return the template.
+
+Do not say if there isn't enough data to fill the template, just add what you can and leave the rest empty
 """
 
 app = Flask(__name__)
@@ -62,7 +64,7 @@ def makeRequestToGroq(userInput):
             "content": userInput,
         }
     ],
-    model="mixtral-8x7b-32768",
+    model="llama2-70b-4096",
     )
     return (chat_completion.choices[0].message.content)
 
