@@ -79,8 +79,9 @@ def returnAPI():
     if not message:
         return jsonify("INVALID REQUEST")
     
-    GptApiResponse = makeRequestToGroq(message)
-    return GptApiResponse
+    GptApiResponse = str(makeRequestToGroq(message))
+    response = {"response":GptApiResponse}
+    return jsonify(response)
 
 
     
