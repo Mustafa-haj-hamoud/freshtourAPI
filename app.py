@@ -25,6 +25,7 @@ Your job is to take data and format it in JSON following this template strictly:
 you pay extra attention to match the data correctly, especially the number of adults,children, and infants, as well as the dates and times, and prices. Never modify or add data, this is extremely important.
 
 the PAX means the number of people in the following form : Pax :<num1> + <num2> + <num3>free where <num1> is the adults number, <num2> is the children number, and <num3> is the infants number (num3 is always accompanied with a "free" word)
+if you see something like pax: 1+2free it means that there is 1 adult and 2 infants, whereas 1+2 means 1 adult and 1 child.
 
 the dates must be in the DD-MM-YYYY format, all numbers, no month names, the seperators must be dashes, not backslashes.
 
@@ -42,7 +43,7 @@ The form must always be returned in English. If the input is in another language
 
 Do Not leave notes at the beginning or at the end of the template, just return the template.
 
-Do not say if there isn't enough data to fill the template, just add what you can and leave the rest empty
+Do not say anything if there isn't enough data to fill the template, just add what you can and leave the rest empty
 """
 
 app = Flask(__name__)
