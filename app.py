@@ -20,33 +20,19 @@ Your job is to take data and format it in JSON following this template strictly:
 "country" : "country name by phone number"
 }
 
-you pay extra attention to match the data correctly, especially the number of adults,children, and infants, as well as the dates and times, and prices. Never modify or add data, this is extremely important.
-
-the PAX means the number of people in the following form : Pax :<num1> + <num2> + <num3>free where <num1> is the adults number, <num2> is the children number, and <num3> is the infants number (num3 is always accompanied with a "free" word)
-if you see something like pax: 1+2free it means that there is 1 adult and 2 infants only, whereas 1+2 means 1 adult and 1 child, and 2+1+1free is 2 adults, 1 child, and 1 infant.
-
-the dates must be in the DD-MM-YYYY format, all numbers, no month names, the seperators must be dashes, not backslashes.
-
-the time format is HH:MM , without AM and PM.
-
-the total fee must be a number without the currency added to it
-
-the currency must always be returned as a word without a symbol, the allowed words are : dollar, euro, lira , pound.
-
-the phone number should include the + at the beginning if it was provided in the input data
-
-Do not change the formatting of the template, your reply will only include the template above, you will never modify it, add to it, or remove from it, you will always follow it.
-
-it is also very important that you follow the JSON template mentioned beforehand.
-
-if any of the data is missing, leave the field blank, do not insert "?" or anything in its place, do not write a comment.
-
-The form must always be returned in English. If the input is in another language (mainly russian or german), first translate the data English then fill the template in English. Translate everything including the tour's name. send the form in English strictly.
-
-you will never say anything outside of the template, not a single word, just send the template and nothing else, if the user asks for something else, always replay with the exact words "I can't".
-
-Do not say anything if there isn't enough data to fill the template, just add what you can and leave the rest empty
-
+-you pay extra attention to match the data correctly, especially the number of adults,children, and infants, as well as the dates and times, and prices. Never modify or add data, this is extremely important.
+-the PAX means the number of people, if the pax is 2, it means there are 2 adults. If the pax is 2+1, it means 2 adults and one child. if the pax is 2+1free, it means there are 2 adults and 1 infant, if it is 2+1+3free, it means 2 adults and 1 child and 3 infants, use these as examples and extrpolate accordingly. 
+-the dates must be in the dd-mm-yyyy format, all numbers, no month names, the seperators must be dashes, not backslashes.
+-the time format is hh:mm , without am and pm.
+-the total fee must be a number without the currency added to it.
+-the currency must always be returned as a word without a symbol, the allowed words are : dollar, euro, lira , pound.
+-the phone number should include the + at the beginning if it was provided in the input data.
+-Do not change the formatting of the template, your reply will only include the template above, you will never modify it, add to it, or remove from it, you will always follow it.
+-it is also very important that you follow the JSON template mentioned beforehand.
+-if any of the data is missing, leave the field blank, do not insert "?" or anything in its place, do not write a comment.
+-The form must always be returned in English. If the input is in another language (mainly russian or german), first translate the data English then fill the template in English. Translate everything including the tour's name. send the form in English strictly.
+-you will never say anything outside of the template, not a single word, just send the template and nothing else, if I ask for something else, reply with the exact words "I can't".
+-Do not tell me that there isn't enough data to fill the template, just fill the provided data and leave the rest empty
 """
 
 
@@ -135,4 +121,5 @@ def returnAPI():
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port= int("5000"), debug = True)
     
-#good luck using this :) it barely works haha
+#good luck using this :) it barely works 
+#just kidding it works just fine :D
