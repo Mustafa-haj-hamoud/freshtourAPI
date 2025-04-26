@@ -64,7 +64,8 @@ def makeRequest(userInput):
     chat_completion = client.chat.completions.create(
     messages= messagesArr,
     # model="mixtral-8x7b-32768",
-    model = "mistral-saba-24b",
+    # model = "mistral-saba-24b",
+    model = 'deepseek-r1-distill-llama-70b'
     )
     return (chat_completion.choices[0].message.content)
 
